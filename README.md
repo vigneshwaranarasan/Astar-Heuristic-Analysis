@@ -1,187 +1,181 @@
-#  Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis
+ Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis
 
-This project implements the **A\*** (A-star) search algorithm **from scratch** in Python, using a custom **weighted grid-based graph structure**.  
-The main objective is to compare the performance of **two admissible heuristics**:
+This project provides a complete implementation of the A* search algorithm on a weighted 2D grid, along with a comparative performance analysis of Manhattan and Euclidean heuristics.
+The goal is to study how heuristic selection impacts:
 
-- **Manhattan Distance**
-- **Euclidean Distance**
+Path optimality
 
-The project includes a fully functional A* implementation, random grid generation with obstacles, a testing harness that runs **10 predefined experiments**, and a raw log output used for heuristic performance comparison.
+Nodes expanded
 
----
+Execution time
 
-##  **Project Directory Structure**
+Efficiency in dense vs. sparse maps
 
-```
+All experiments, results, logs, and documentation are included.
+
+ Project Directory Structure
 vigneshwaranarasan-astar-heuristic-analysis/
 │
 ├── README.md
 ├── LICENSE
 │
 ├── data/
-│   └── astar_raw_log.txt        # Raw log data from 10 test cases
+│   └── astar_raw_log.txt           # Raw performance logs for 10 test cases
+│
+├── docs/
+│   ├── Astar_Report.docx           # Full textual analysis and project report
+│   └── Astar_Report.pdf            # PDF version of the project report
 │
 └── src/
-    ├── astar.py                 # Core A* search algorithm
-    ├── graph.py                 # Weighted grid / graph implementation
-    ├── heuristics.py            # Manhattan & Euclidean heuristic functions
-    ├── main.py                  # Main entry point to run experiments
-    ├── priority_queue.py        # Min-heap priority queue for A*
-    └── tester.py                # Testing harness for 10 randomized grids
-```
+    ├── astar.py                    # Core A* search implementation
+    ├── graph.py                    # Weighted grid / node storage
+    ├── heuristics.py               # Manhattan & Euclidean heuristics
+    ├── main.py                     # Entry point to run experiments
+    ├── priority_queue.py           # Min-heap priority queue wrapper
+    └── tester.py                   # Experiment runner for 10 grid tests
 
----
+📌 Project Overview
 
-##  **Project Overview**
+The A* algorithm finds the lowest-cost path between two nodes by combining:
 
-This project fulfills the requirements of the “Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis” assignment.  
-The implementation focuses on:
+g(n) → cost from the start
 
-- Designing a **generic grid/graph representation** with weighted edges  
-- Implementing the **A\*** search algorithm from scratch  
-- Using a **Priority Queue** for the open set  
-- Comparing **two admissible heuristics**  
-- Generating **10 randomized test scenarios**  
-- Logging performance metrics including:
-  - Path existence  
-  - Path length  
-  - Total path cost  
-  - Nodes expanded  
-  - Execution time (ms)
+h(n) → heuristic estimate to the goal
 
-All experiments are captured in **data/astar_raw_log.txt** and can be used for report writing, plotting, and performance discussion.
+This project uses a custom weighted grid graph supporting:
 
----
+Obstacles
 
-##  **Tasks Completed**
+Randomly generated terrain
 
-### **1. Grid/Graph Data Structure**
-A fully customizable grid with:
-- Weighted cells  
-- Obstacles  
-- Boundary & neighbor validation  
-- Random generation with obstacle probability  
+Variable movement cost
 
-Implemented in:  
- `src/graph.py`
+Multiple map sizes and densities
 
----
+Two admissible heuristics are compared:
 
-### **2. Core A\* Search Algorithm**
-The A\* algorithm is implemented from scratch with:
-- Priority Queue (min-heap)  
-- `g(n)` cost tracking  
-- Heuristic integration  
-- Path reconstruction  
-- Node expansion counting  
-- Execution time measurement  
+Heuristic	Description	Notes
+Manhattan Distance	Uses L1 distance	Ideal for 4-direction grids
+Euclidean Distance	Straight-line distance	Smooth continuous estimation
+✔️ Tasks Completed (as per assignment)
+1. Grid/Graph Data Structure
 
-Implemented in:  
- `src/astar.py`  
- `src/priority_queue.py`
+A custom GridMap class was implemented to handle:
 
----
+Weighted nodes
 
-### **3. Two Admissible Heuristics**
-Both heuristics satisfy the admissibility requirement on a 4-connected grid:
+Obstacles
 
-- **Manhattan Distance**  
-- **Euclidean Distance**
+Neighbor lookup
 
-Implemented in:  
- `src/heuristics.py`
+Grid randomization
 
----
+📄 File: src/graph.py
 
-### **4. Testing Harness — 10 Experiments**
-A complete experimental runner generates:
-- 10 grid configurations (sizes 20×20 to 40×40)  
-- Two heuristic runs per grid  
-- Auto-generated raw logs  
+2. A* Search Algorithm
 
-Implemented in:  
- `src/tester.py`
+Complete A* implementation with:
 
-Run through:  
- `src/main.py`
+PriorityQueue for open set
 
----
+g-cost table
 
-### **5. Performance Comparison Log**
-All 20 runs (10 test cases × 2 heuristics) are saved in:
+Came-from table for path reconstruction
 
- `data/astar_raw_log.txt`
+Node expansion counter
+
+Execution time recording
+
+📄 File: src/astar.py
+
+3. Two Admissible Heuristics
+
+Both heuristics satisfy admissibility and consistency on a 4-connected grid.
+
+📄 File: src/heuristics.py
+
+4. Testing Harness (10 test cases)
+
+The system automatically generates 10 random grid scenarios with varying:
+
+Dimensions
+
+Obstacle densities
+
+Random seeds
+
+Each scenario is solved using:
+
+Manhattan A*
+
+Euclidean A*
+
+📄 File: src/tester.py
+
+5. Comparative Analysis
+
+All experimental results are saved in:
+
+📁 data/astar_raw_log.txt
 
 Format:
 
-```
-test_id,heuristic,found,path_length,total_cost,
-nodes_expanded,execution_time_ms,width,height,obstacle_prob
-```
+test_id,heuristic,found,path_length,total_cost,nodes_expanded,execution_time_ms,width,height,obstacle_prob
 
-Example entry:
 
-```
-1,manhattan,True,39,92.8565,301,0.7659,20,20,0.2
-```
+These logs were used to produce:
 
----
+The full report (docs/Astar_Report.docx / .pdf)
 
-##  **Summary of Results**
+Performance comparison conclusions
 
-### **Manhattan Heuristic**
-- Expands fewer nodes in most cases  
-- Slightly faster on dense obstacle grids  
-- Very consistent for grid-based movement  
+📊 Summary of Results
+Manhattan Heuristic
 
-### **Euclidean Heuristic**
-- Produces the **same optimal path cost**  
-- Sometimes expands more nodes  
-- Slightly faster in open, larger grids  
+Expands fewer nodes in most test cases
 
-Both heuristics always produce **optimal paths**.
+Slightly more consistent in cluttered environments
 
----
+Best for strict grid-based movement
 
-##  **How to Run the Project**
+Euclidean Heuristic
 
-### **1. Clone the repository**
+Produces identical optimal path costs
 
-```bash
+Sometimes faster in large open grids
+
+Slightly more node expansions overall
+
+Conclusion
+
+Both heuristics guarantee optimal paths, but their efficiency trade-offs differ depending on map density and weight distribution.
+
+▶️ Running the Project
+1. Clone the repository
 git clone https://github.com/vigneshwaranarasan/Astar-Heuristic-Analysis.git
 cd Astar-Heuristic-Analysis
-```
 
-### **2. Run experiments**
-
-```bash
+2. Run all 10 experiments
 python src/main.py
-```
 
-### **3. Check the output log**
+3. View results
 
-```
+Logs saved to:
+
 data/astar_raw_log.txt
-```
 
----
 
-##  **Expected Deliverables (Completed)**
+Report available in:
 
-### ✔ Full runnable A* source code  
-### ✔ Testing harness with 10 cases  
-### ✔ Raw log output for comparative analysis  
-### ✔ Heuristic performance comparison  
+docs/Astar_Report.pdf
+docs/Astar_Report.docx
 
----
+📄 License
 
-##  **License**
+This project is licensed under the MIT License.
+See the LICENSE file for details.
 
-This project is licensed under the **MIT License**.
+👨‍💻 Author
 
----
-
-##  **Author**
-
-**Vigneshwaranarasan**  
+Vigneshwaranarasan
 GitHub: https://github.com/vigneshwaranarasan
