@@ -1,11 +1,11 @@
-# ⭐ Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis
+#  Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis
 
 This project provides a complete implementation of the **A*** search algorithm on a weighted 2D grid, along with a comparative performance analysis of **Manhattan** and **Euclidean** heuristics.  
 The goal is to study how heuristic selection impacts path optimality, nodes expanded, execution time, and search efficiency.
 
 ---
 
-## 📁 Project Directory Structure
+##  Project Directory Structure
 
 ```
 vigneshwaranarasan-astar-heuristic-analysis/
@@ -31,7 +31,7 @@ vigneshwaranarasan-astar-heuristic-analysis/
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project fulfills all the tasks outlined in the “Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis” assignment.
 
@@ -44,7 +44,7 @@ Both produce the same optimal path cost but differ in node expansions and execut
 
 ---
 
-## ✔️ Tasks Completed
+##  Tasks Completed
 
 ### **1. Grid/Graph Data Structure**
 Implemented in `src/graph.py`  
@@ -97,7 +97,7 @@ Contains detailed results for all 20 runs (10 × 2 heuristics).
 
 ---
 
-## 📊 Summary of Experimental Results
+##  Summary of Experimental Results
 
 ### **Manhattan Heuristic**
 - Fewer nodes expanded in most cases  
@@ -110,7 +110,7 @@ Contains detailed results for all 20 runs (10 × 2 heuristics).
 
 ---
 
-## ▶️ How to Run the Project
+##  How to Run the Project
 
 ### **Clone the repository**
 ```bash
@@ -137,7 +137,7 @@ docs/Astar_Report.pdf
 
 ---
 
-## 📄 License
+##  License
 This project is licensed under the **MIT License**.
 
 ---
