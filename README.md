@@ -10,7 +10,7 @@ The project includes a fully functional A* implementation, random grid generatio
 
 ---
 
-## 📁 **Project Directory Structure**
+##  **Project Directory Structure**
 
 ```
 vigneshwaranarasan-astar-heuristic-analysis/
@@ -32,7 +32,7 @@ vigneshwaranarasan-astar-heuristic-analysis/
 
 ---
 
-## 🧠 **Project Overview**
+##  **Project Overview**
 
 This project fulfills the requirements of the “Advanced Implementation of the A* Pathfinding Algorithm with Heuristic Analysis” assignment.  
 The implementation focuses on:
@@ -53,7 +53,7 @@ All experiments are captured in **data/astar_raw_log.txt** and can be used for r
 
 ---
 
-## ✔️ **Tasks Completed**
+##  **Tasks Completed**
 
 ### **1. Grid/Graph Data Structure**
 A fully customizable grid with:
@@ -110,7 +110,7 @@ Run through:
 ### **5. Performance Comparison Log**
 All 20 runs (10 test cases × 2 heuristics) are saved in:
 
-📁 `data/astar_raw_log.txt`
+ `data/astar_raw_log.txt`
 
 Format:
 
@@ -127,7 +127,7 @@ Example entry:
 
 ---
 
-## 📊 **Summary of Results**
+##  **Summary of Results**
 
 ### **Manhattan Heuristic**
 - Expands fewer nodes in most cases  
@@ -143,7 +143,7 @@ Both heuristics always produce **optimal paths**.
 
 ---
 
-## ▶️ **How to Run the Project**
+##  **How to Run the Project**
 
 ### **1. Clone the repository**
 
@@ -166,7 +166,7 @@ data/astar_raw_log.txt
 
 ---
 
-## 📈 **Expected Deliverables (Completed)**
+##  **Expected Deliverables (Completed)**
 
 ### ✔ Full runnable A* source code  
 ### ✔ Testing harness with 10 cases  
@@ -175,13 +175,13 @@ data/astar_raw_log.txt
 
 ---
 
-## 📄 **License**
+##  **License**
 
 This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 **Author**
+##  **Author**
 
 **Vigneshwaranarasan**  
 GitHub: https://github.com/vigneshwaranarasan
