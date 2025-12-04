@@ -63,7 +63,7 @@ A fully customizable grid with:
 - Random generation with obstacle probability  
 
 Implemented in:  
-📄 `src/graph.py`
+ `src/graph.py`
 
 ---
 
@@ -77,8 +77,8 @@ The A\* algorithm is implemented from scratch with:
 - Execution time measurement  
 
 Implemented in:  
-📄 `src/astar.py`  
-📄 `src/priority_queue.py`
+ `src/astar.py`  
+ `src/priority_queue.py`
 
 ---
 
@@ -89,7 +89,7 @@ Both heuristics satisfy the admissibility requirement on a 4-connected grid:
 - **Euclidean Distance**
 
 Implemented in:  
-📄 `src/heuristics.py`
+ `src/heuristics.py`
 
 ---
 
@@ -100,10 +100,10 @@ A complete experimental runner generates:
 - Auto-generated raw logs  
 
 Implemented in:  
-📄 `src/tester.py`
+ `src/tester.py`
 
 Run through:  
-📄 `src/main.py`
+ `src/main.py`
 
 ---
 
