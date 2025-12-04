@@ -142,6 +142,6 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 **Vigneshwaranarasan**  
 GitHub: https://github.com/vigneshwaranarasan
